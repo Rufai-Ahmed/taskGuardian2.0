@@ -12,6 +12,7 @@ import {
 
 export const Footer = () => {
   const [state, setState] = useState<boolean>(false);
+  const [lang, setLang] = useState<string>("English");
   console.log(state);
 
   return (
@@ -41,10 +42,67 @@ export const Footer = () => {
                   setState(!state);
                 }}
               >
-                English
+                {lang}
                 {state ? (
                   <div className="w-[270px] px-4 h-[400px] right-[-300px]  bg-white top-0  absolute shadow-xl ">
-                    <div className="w-full hover:bg-gray-50 duration-300 transition-all "></div>
+                    <div className="w-full duration-300 transition-all pt-4 ">
+                      <div
+                        className="w-full py-3 border-b  hover:bg-gray-50 pl-3 "
+                        onClick={() => {
+                          setLang("English");
+                        }}
+                      >
+                        English
+                      </div>
+                      <div
+                        className="w-full py-3 border-b  hover:bg-gray-50 pl-3 "
+                        onClick={() => {
+                          setLang("French");
+                        }}
+                      >
+                        French
+                      </div>
+                      <div
+                        className="w-full py-3 border-b  hover:bg-gray-50 pl-3 "
+                        onClick={() => {
+                          setLang("Dutch");
+                        }}
+                      >
+                        Dutch
+                      </div>
+                      <div
+                        className="w-full py-3 border-b  hover:bg-gray-50 pl-3 "
+                        onClick={() => {
+                          setLang("Japanese");
+                        }}
+                      >
+                        Japanese
+                      </div>
+                      <div
+                        className="w-full py-3 border-b  hover:bg-gray-50 pl-3 "
+                        onClick={() => {
+                          setLang("Korean");
+                        }}
+                      >
+                        Korean
+                      </div>
+                      <div
+                        className="w-full py-3 border-b  hover:bg-gray-50 pl-3 "
+                        onClick={() => {
+                          setLang("Spanish");
+                        }}
+                      >
+                        Spanish
+                      </div>
+                      <div
+                        className="w-full py-3 border-b  hover:bg-gray-50 pl-3 "
+                        onClick={() => {
+                          setLang("Portugese");
+                        }}
+                      >
+                        Portugese
+                      </div>
+                    </div>
                   </div>
                 ) : (
                   ""

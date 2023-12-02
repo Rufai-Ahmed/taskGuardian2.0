@@ -5,21 +5,21 @@ import { useState } from "react";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { createAccount, loginAccount, verifyAccount } from "../../APIs/authAPI";
+import { createAccount, verifyAccount } from "../../APIs/authAPI";
 import { NavigateFunction, useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
-
 interface iSubmit {
   email: string;
-  password: string;
+  vToken: string;
 }
 
-export const Login = () => {
+export const Verify = () => {
   const navigate: NavigateFunction = useNavigate();
+
+  const [toggle, setToggle] = useState(true);
 
   const schema = yup.object({
     email: yup.string().required("Your name is required to continue"),
-    password: yup.string().required("Please put in your password"),
+    vToken: yup.string().required("Please put in your one-time token"),
   });
 
   const {
@@ -31,12 +31,10 @@ export const Login = () => {
   });
 
   const onHandleSubmit = handleSubmit((data: iSubmit) => {
-    loginAccount(data).then((res: any) => {
-      const decodedID: any = jwtDecode(res);
-
+    verifyAccount(data).then((res: any) => {
       if (res?.message) {
       } else {
-        navigate(`/dashboard/${decodedID!.id}`);
+        navigate("/login");
       }
     });
   });
@@ -48,7 +46,7 @@ export const Login = () => {
           <img src={logo} className="h-[60%]" />
         </div>
         <div className="w-[80%] h-[calc(100vh-100px)] flex flex-col items-center ">
-          <div className="text-[50px] font-bold ">Login</div>
+          <div className="text-[50px] font-bold ">Verify</div>
           <form
             onSubmit={onHandleSubmit}
             className="w-[70%] flex flex-col items-center mt-10 "
@@ -68,15 +66,15 @@ export const Login = () => {
               </div>
 
               <div className="text-[14px]">
-                Password
+                Token
                 <input
-                  {...register("password")}
-                  type="password"
-                  placeholder="Enter your password..."
+                  {...register("vToken")}
+                  type="token"
+                  placeholder="Enter your one-time token..."
                   className="w-full rounded-sm border bg-[#f7f5f3] text-[#b3b1b0] px-2 py-1 outline-none "
                 />
                 <div className="w-full text-[11px] text-red-500 flex justify-end ">
-                  {errors.password?.message}
+                  {errors.vToken?.message}
                 </div>
               </div>
 
