@@ -67,7 +67,7 @@ export const signinUser = async (req: Request, res: Response) => {
       const compare = await bcrypt.compare(password, findUser.password);
       if (compare) {
         if (findUser.verified && findUser.vToken === "") {
-          const encryptedID = jwt.sign(findUser._id, "justForMe");
+          const encryptedID = jwt.sign({ id: findUser._id }, "justForMe");
 
           return res.status(200).json({
             msg: "Data gotten",

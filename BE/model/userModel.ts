@@ -9,6 +9,7 @@ interface iUser {
   verified: boolean;
   task: Array<{}>;
   project: Array<{}>;
+  plan: string;
 }
 
 interface iUserData extends iUser, Document {}
@@ -19,6 +20,7 @@ const userModel = new Schema<iUserData>(
     avatar: { type: String },
     email: { type: String, unique: true },
     password: { type: String },
+    plan: { type: String, default: "Free" },
     vToken: { type: String },
     verified: { type: Boolean, default: false },
     task: [{ type: Types.ObjectId, ref: "tasks" }],
