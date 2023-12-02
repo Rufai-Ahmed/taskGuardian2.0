@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "AI",
+    "info": "Ask literally anything. TG will answer.",
+    "icon": "LuMoonStar",
+    "color": "purple",
+    "bg": "plum"
+  },
+  {
+    "id": 2,
+    "name": "Wikis",
+    "info": "Centralise your knowledge. No more hunting for answers.",
+    "icon": "LuMoonStar",
+    "color": "red",
+    "bg": "#fce9e8"
+  },
+  {
+    "id": 3,
+    "name": "Project",
+    "info": "Manage complex projects without the chaos.",
+    "icon": "LuMoonStar",
+    "color": "blue",
+    "bg": "lightblue"
+  },
+  {
+    "id": 4,
+    "name": "Docs",
+    "info": "Simple, powerful, beautiful. Next gen notes and docs.",
+    "icon": "LuMoonStar",
+    "color": "gold",
+    "bg": "lightyellow"
+  }
+]
