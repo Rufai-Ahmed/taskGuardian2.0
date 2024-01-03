@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef } from "react";
 import { FaTools } from "react-icons/fa";
 import { FaPalette, FaRocket, FaMegaport, FaCompass } from "react-icons/fa6";
 

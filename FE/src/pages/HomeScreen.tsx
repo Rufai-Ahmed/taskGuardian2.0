@@ -1,4 +1,3 @@
-import React from "react";
 import { Hero } from "./Home/Hero";
 import { Sponsor } from "./Home/Sponsor";
 import { Blocks } from "./Home/Blocks";

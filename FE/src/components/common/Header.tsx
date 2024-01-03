@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import logo from "../../Assets/logo.png";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const Header = () => {
   const [state, setState] = useState(false);
@@ -32,7 +33,7 @@ export const Header = () => {
                 <div>Download</div>
                 <div>Solutions</div>
                 <div>Resources</div>
-                <div>Pricing</div>
+                <NavLink to="/pricing">Pricing</NavLink>
               </div>
             </div>
 
@@ -72,7 +73,7 @@ export const Header = () => {
                 <div>Download</div>
                 <div>Solutions</div>
                 <div>Resources</div>
-                <div>Pricing</div>
+                <NavLink to="/pricing">Pricing</NavLink>
               </div>
             </div>
 

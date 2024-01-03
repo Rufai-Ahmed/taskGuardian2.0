@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { TeamProps } from "../../components/props/TeamProps";
 import hr from "../../Assets/Team/hr.webp";
 import wiki from "../../Assets/Team/list.webp";

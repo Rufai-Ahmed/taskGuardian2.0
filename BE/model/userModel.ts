@@ -7,8 +7,9 @@ interface iUser {
   password: string;
   vToken: string;
   verified: boolean;
-  task: Array<{}>;
+  tasks: Array<{}>;
   project: Array<{}>;
+  staff: Array<{}>;
   plan: string;
 }
 
@@ -20,11 +21,12 @@ const userModel = new Schema<iUserData>(
     avatar: { type: String },
     email: { type: String, unique: true },
     password: { type: String },
-    plan: { type: String, default: "Free" },
+    plan: { type: String, default: "freemo" },
     vToken: { type: String },
     verified: { type: Boolean, default: false },
-    task: [{ type: Types.ObjectId, ref: "tasks" }],
     project: [{ type: Types.ObjectId, ref: "projects" }],
+    staff: [{ type: Types.ObjectId, ref: "staffs" }],
+    tasks: [{ type: Types.ObjectId, ref: "tasks" }],
   },
   { timestamps: true }
 );
